@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: stud-service
+          uri: lb://STUD-SERVICE
+          predicates:
+            - Path=/student/**
+        - id: fee-service
+          uri: lb://FEE-SERVICE
+          predicates:
+            - Path=/dopayment/**
+server:
+  port: 8989
