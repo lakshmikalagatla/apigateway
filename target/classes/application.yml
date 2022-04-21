@@ -14,3 +14,9 @@ spring:
             - Path=/dopayment/**
 server:
   port: 8989
+eureka:
+  instance:
+    hostname: myimage
+  client:
+    serviceUrl:
+      defaultZone: http://myimage:8761/eureka/
